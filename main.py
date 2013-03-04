@@ -17,3 +17,8 @@ os.chdir(app_root)
 
 db 	     = config.db
 render   = config.render
+
+
+if __name__ == '__main__':
+	app = web.application(urls,globals())
+	app.run()
