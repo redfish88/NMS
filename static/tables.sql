@@ -1,0 +1,29 @@
+--mysql 表结构
+
+create table user(
+	id         int(11) not null auto_increment primary key,
+	username	varchar(15) not null ,
+	passwd		varchar(20) not null ,
+	nickname	varchar(50),
+	createtime	date
+);
+create table news_post(
+
+	id			int(11) not null auto_increment primary key,
+	title		varchar(500) not null,
+	content		text,
+	type  	    int,	
+	author		int,
+	status		int,
+	post_time   datetime,
+	update_time	datetime
+);
+create table hot(
+	news_id		int(11) not null auto_increment primary key,
+	top			int(5),
+	stamp		int(5)
+);
+create table news_type(
+	id        	int(11) not null auto_increment primary key,
+	type_name	varchar(100) not null
+);
