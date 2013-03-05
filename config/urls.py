@@ -1,7 +1,7 @@
 #!D:\python2.7\python.exe
 # coding:utf-8
 
-pre_fix = 'controllers.'
+pre_fix = 'controllers.controllers.'
 
 urls = (
 	'/'	,					pre_fix + 'index',

@@ -60,13 +60,14 @@
 
     <div class="container">
 
-      <form class="form-signin" align="center">
+      <form class="form-signin" align="center" method="post" action="/register">
         <h2 class="form-signin-heading">Please sign up</h2>
+        <div id="sign-error"></div>
         <li>
-        <input type="text" class="input-block-level" placeholder="UserName">
+        <input type="text" name="username" class="input-block-level" placeholder="UserName">
         </li>
         <li>
-        <input type="password" class="input-block-level" placeholder="Password">
+        <input type="password" name="password" class="input-block-level" placeholder="Password">
         </li>
         <li>
         <input type="password" class="input-block-level" placeholder="Confirm Password">
