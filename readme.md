@@ -1,5 +1,10 @@
 # 新闻管理系统
 
+## 在线访问
+
+<https://nms-redfish.rhcloud.com>
+(默认账号 root/admin)
+
 ## 使用技术
 
 * [Python 2.7](http://www.python.org/)

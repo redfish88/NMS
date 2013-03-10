@@ -3,7 +3,7 @@
 create table user(
 	id         int(11) not null auto_increment primary key,
 	username	varchar(15) unique not null ,
-	passwd		varchar(20) not null ,
+	passwd		varchar(100) not null ,
 	nickname	varchar(50),
 	createtime	date
 );
@@ -18,7 +18,7 @@ create table news_post(
 	post_time   datetime,
 	update_time	datetime
 );
-create table hot(
+create table vote(
 	news_id		int(11) not null auto_increment primary key,
 	top			int(5) default 0,
 	stamp		int(5) default 0
