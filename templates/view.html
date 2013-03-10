@@ -1,0 +1,49 @@
+$def with(entry)
+<html>
+<head>
+	<title>$entry.title</title>
+	<link rel="stylesheet" type="text/css" href="$config.static/css/new.css"/>
+</head>
+<body>
+$:render.header()
+	<input type="text" id="post_id" value="$entry.id" style="display:none" />
+	<div id='container' style="margin-top:30px">
+		字体大小：
+		<a href="javascript:doZoom(20)">大</a>&nbsp;
+		<a href="javascript:doZoom(16)">中</a>&nbsp;
+		<a href="javascript:doZoom(12)">小</a>&nbsp;
+		<h2 align='center'>$entry.title</h2>
+		<textarea id="content-hide" style='display:none'>$entry.content</textarea>
+		<div id='content'></div>
+
+
+	</div>
+	<div class="postDesc">
+			posted @ $entry.author
+			<span id="post-date">$entry.post_time</span>
+			
+			$if entry.author == session.user:
+				<a href="/edit/$entry.id">编辑</a>
+	</div>
+	<div id="div_digg" >	
+									
+		<div class="diggit" onclick="votePost($entry.id,'top')"> 
+			<span class="diggnum" id="top">0</span>
+		</div>
+		<div class="buryit" onclick="votePost($entry.id,'stamp')"> 
+			<span class="burynum" id="stamp">0</span>
+		</div>
+		<div class="clear"></div>
+		<div class="diggword" id="digg_tips" style="color: red;"></div>	
+	</div>
+	<script src="$config.static/js/markdown.js"></script>
+	<script src="$config.static/js/jquery-1.8.2.js"></script>
+	<script type="text/javascript" src="$config.static/js/jquery-cookie.js"></script>
+	<script src="$config.static/js/common.js"></script>
+	<script type="text/javascript" src='$config.static/js/view.js'></script>
+	<script type="text/javascript">
+
+	</script>
+</body>
+
+</html>

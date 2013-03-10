@@ -1,10 +1,58 @@
+$def with(news_list)
 <!Doctype html>
 <html>
+<head>
+	<title>新闻发布系统</title>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="$config.static/css/index.css"/> 
+</head>
+<body>
+$:render.header()
+		<div id="sidebar">
+			<strong>最新发布</strong>
+			<ul class='body'>
+				<li>
+					<a href="">2013年3月8日</a>
+				</li>
+				<li>
+					<a href="">2013年3月7日</a>
+				</li>
+				<li>
+					<a href="">2013年3月6日</a>
+				</li>
 
+			</ul>
+			<strong>新闻分类</strong>
+			<ul class='body'>
+				<li>
+					<a href="">体育</a>
+				</li>
+				<li>
+					<a href="">娱乐</a>
+				</li>
+				<li>
+					<a href="">经济</a>
+				</li>
 
+			</ul>
+		</div>
+	<div id="main">
+		$if not news_list:
+			<div align='center' style="margin-top:100px;font-size:16px">
+				空空如也！<a href="/new">来一篇</a>
+			</div>
+		$for news in news_list:
+			<div class="post_body">
+				<h3><a class="titlelnk" href="/view/$news.id" target="_blank">$news.title</a></h3>               	
+			    <div class="post_item_foot">                    
+			    作者:$news.author   
+			    &nbsp;&nbsp;&nbsp;&nbsp;
+			    发布于:$news.post_time
+				</div>
+			</div>
+	</div>
 
-
-
+</body>
 
 </html>
 

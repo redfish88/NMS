@@ -1,0 +1,15 @@
+	<div id="header">
+		<div>
+			欢迎你,$session.user
+		<span style="float: right">
+			<a href='/'>首页</a>
+			$if not session.loggedin:
+				<a href='/sign'>登录</a>
+				<a href='/register'>注册</a>
+			$else:
+				<a href='/new'>新建</a>
+				<a href='/mypost'>我的发布</a>
+				<a href='/logout'>退出</a>
+		</span>
+		</div>
+	</div>

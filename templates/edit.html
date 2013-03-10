@@ -1,0 +1,53 @@
+$def with(entry)
+<html>
+<head>
+
+	<title>编辑文章</title>
+	<link rel="stylesheet" type="text/css" href="$config.static/css/new.css"/>
+
+</head>
+<body>
+$:render.header()
+	 <div id='container'>
+
+
+		<div class="mkd-editor" id="mkd-editor">
+			<form action="?" method="post" id="form-news">
+				<input type="text" value="$entry.id" style="display:none" />
+				<p id='title'>标题</p>
+				<input tabindex="1" type="text" name="title" class="pb-input-text" id="pb-text-title" value="$entry.title">
+				<select name="type" style="	width: 80px;margin-top: 18px">
+					<option value='0' $'selected' if 0==entry.type else ''>默认</option>
+					<option value='1' $'selected' if 1==entry.type else ''>体育</option>
+					<option value='2' $'selected' if 2==entry.type else ''>娱乐</option>
+					<option value='3' $'selected' if 3==entry.type else ''>经济</option>
+				</select>
+				<p>
+					<a href="#"   onclick='javascript:editor();'>编辑</a>
+					<a href="#"   onclick='javascript:preview();'>预览</a>
+					<a href='http://daringfireball.net/projects/markdown/syntax' target='_blank' style='float:right'>markdown</a>
+				</p>
+				<textarea name="content" id="md-editor" style="height: 300px;width:600px;overflow: hidden;" >$entry.content</textarea>
+				<div id='preview' style="display: none;" ></div>
+				<input type='text' value="$entry.status" name='status' style='display:none' id='status'/>
+			</form>
+			<div style="margin-top: 20px">
+				<a href='/' >取消</a>
+				<span style="float:right">
+					<a href='#' onclick="save()">保存</a>
+					&nbsp;&nbsp;&nbsp;
+					$if entry.status == 0:
+						<a href="#" onclick="to_post()">发布</a>
+					$if entry.status == 1:
+						<a href="#" onclick="to_draft()">存为草稿(将会取消发布)</a>
+				</span>
+			</div>
+		</div>
+	</div>
+
+	<script src="$config.static/js/jquery-1.8.2.js"></script>
+	<script type="text/javascript" src="$config.static/js/markdown.js"></script>
+	<script type="text/javascript" src='$config.static/js/common.js'></script>
+</body>
+
+</html>

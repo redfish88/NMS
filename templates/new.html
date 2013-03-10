@@ -1,0 +1,48 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<title>发表新闻</title>
+	<link rel="stylesheet" type="text/css" href="$config.static/css/new.css"/>
+
+</head>
+<body>
+$:render.header()
+	 <div id='container'>
+
+
+		<div class="mkd-editor" id="mkd-editor">
+			<form action="/new" method="post" id="form-news">
+				<p id='title'>标题</p>
+				<input tabindex="1" type="text" name="title" class="pb-input-text" id="pb-text-title">
+				<select name="type" style="	width: 80px;margin-top: 18px">
+					<option value='0'>默认</option>
+					<option value='1'>体育</option>
+					<option value='2'>娱乐</option>
+					<option value='3'>经济</option>
+				</select>
+				<p>
+					<a href="#"   onclick='javascript:editor();'>编辑</a>
+					<a href="#"   onclick='javascript:preview();'>预览</a>
+					<a href='http://daringfireball.net/projects/markdown/syntax' target='_blank' style='float:right'>markdown</a>
+				</p>
+				<textarea name="content" id="md-editor" style="height: 300px;width:600px;overflow: hidden;" ></textarea>
+				<div id='preview' style="display: none;" ></div>
+				<input type='text' name='status' style='display:none' id='status'/>
+			</form>
+			<div style="margin-top: 20px">
+				<a href='/' >取消</a>
+				<span style="float:right">
+					<a href='#' onclick="draft()">存草稿</a>
+					&nbsp;&nbsp;&nbsp;
+					<a href="#" onclick="publish()">发布</a>
+				</span>
+			</div>
+		</div>
+	</div>
+
+	<script src="$config.static/js/jquery-1.8.2.js"></script>
+	<script type="text/javascript" src="$config.static/js/markdown.js"></script>
+	<script type="text/javascript" src='$config.static/js/common.js'></script>
+</body>
+
+</html>

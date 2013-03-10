@@ -1,0 +1,88 @@
+a:link,a:visited{text-decoration:none;}
+body{
+	font-size: 14px;
+}
+#header {
+background-color: #eee;
+height: 30px;
+margin-bottom: 10px;
+margin-top: 0px;
+}
+#container{
+align: center;
+margin-left: 50px;
+}
+#title{
+	font-size: 18px
+}
+
+
+#mkd-editor{
+cursor: default;
+display: block;
+font-family: 'Helvetica Neue', 'Hiragino Sans GB', 'Segoe UI', 'Microsoft Yahei', Î¢ÈíÑÅºÚ, Tahoma, Arial, STHeiti, sans-serif;
+height: 303px;
+margin-bottom: 0px;
+margin-left: 0px;
+margin-right: 0px;
+margin-top: 0px;
+padding-bottom: 10px;
+padding-left: 10px;
+padding-right: 10px;
+padding-top: 10px;
+width: 582px;
+}
+#pb-text-title{
+height: 30px;
+box-shadow: 0 1px 1px #d3d1d1;
+font-size: 24px;
+color: #333;
+line-height: 30px;
+padding: 7px;
+width: 588px;
+outline: none;
+border: 1px solid #dddddd;
+border-top: 1px solid #ebebeb;
+border-bottom: 1px solid #b7b7b7;
+border-radius: 4px;
+-webkit-border-radius: 4px;
+background: #fff;
+}
+#div_digg {
+position: fixed;
+bottom: 1%;
+right: 2%;
+border: 1px solid #ddd;
+padding: 10px;
+background: #fcfcfc;
+border-radius: 3px;
+}
+.diggit {
+float: left;
+width: 46px;
+height: 52px;
+background: url('http://static.cnblogs.com/images/upup.gif') no-repeat;
+text-align: center;
+cursor: pointer;
+margin-top: 2px;
+padding-top: 5px;
+}
+.buryit {
+float: right;
+margin-left: 20px;
+width: 46px;
+height: 52px;
+background: url('http://static.cnblogs.com/images/downdown.gif') no-repeat;
+text-align: center;
+cursor: pointer;
+margin-top: 2px;
+padding-top: 5px;
+}
+.postDesc, .entrylistItemPostDesc {
+border-bottom: 0px dotted #999;
+color: #666;
+text-align: right;
+padding-bottom: 5px;
+vertical-align: middle;
+margin-top: 50px;
+}
